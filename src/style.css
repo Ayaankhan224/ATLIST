@@ -202,9 +202,13 @@ li:hover{
   background:#ffffff13;
   box-shadow:0 0 105px rgba(0,0,0,.25);
   backdrop-filter:blur(50px);
-  color:#e8e8e8c4;
+  color:#ffffffc4;
   font-size:1.5vh;
   margin-bottom:2vh;
+  outline:none;
+}
+input::placeholder {
+  color: #ffffffc4;
 }
 .genBtn{
   padding:1vh 2vh;
@@ -217,6 +221,11 @@ li:hover{
   font-size:1.5vh;
   cursor:pointer;
   transition:.3s ease;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:100px;
+  position:relative;
 }
 .genBtn:hover{
   color:#fff;
@@ -227,14 +236,15 @@ li:hover{
   pointer-events:none;
 }
 .loader{
-  width: 50px;
-  height: 50px;
-  margin-top:2vh;
+  width: 25px;
+  height: 25px;
+  border: 3px solid #ffffff1a;
+  border-top: 3px solid #000000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
   opacity:0;
   visibility:hidden;
-  background: conic-gradient(from 0deg, #e8a2ff 0deg, #b78aff 90deg, transparent 270deg);
-  border-radius: 50%;
-  animation: spin 1.2s linear infinite;
+  position:absolute;
 }
 .loader.active{
   opacity:1;
@@ -243,19 +253,4 @@ li:hover{
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-}
-
-/*saved*/
-.saved h1{
-  font-family:"Domine";
-  font-weight:400;
-  font-size:4vh;
-  text-align:center;
-  margin-bottom:4vh;
-}
-.saved p{
-  font-family:"Domine";
-  text-align:center;
-  font-size:3vh;
-  color:#e8e8e8c4;
-}
+}   

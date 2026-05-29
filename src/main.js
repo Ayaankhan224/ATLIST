@@ -18,25 +18,25 @@ function switchPanel(activePanel){
                 panel,
                 {
                     opacity:0,
-                    y:20,
-                    scale:0.98
+                    y:25,
+                    scale:0.97
                 },
                 {
                     opacity:1,
                     y:0,
                     scale:1,
-                    duration:0.45,
-                    ease:"cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+                    duration:0.55,
+                    ease:"power3.out"
                 }
             );
         }
         else{
             gsap.to(panel,{
                 opacity:0,
-                y:-20,
-                scale:0.98,
-                duration:0.45,
-                ease:"cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+                y:-15,
+                scale:0.97,
+                duration:0.3,
+                ease:"power2.in",
                 onComplete:()=>{
                     panel.classList.remove("active");
                 }
@@ -78,13 +78,9 @@ const genBtn=document.querySelector(".genBtn");
 function startLoading(){
     gsap.timeline()
     .to(genBtn,{
-        opacity:0,
-        scale:0.95,
+        color:"transparent",
         duration:0.3,
-        ease:"power2.in",
-        onComplete:()=>{
-            genBtn.classList.add("hidden");
-        }
+        ease:"power2.in"
     },0)
     .to(loader,{
         opacity:1,
@@ -99,7 +95,6 @@ function stopLoading(){
     gsap.timeline()
     .to(loader,{
         opacity:0,
-        scale:0.95,
         duration:0.3,
         ease:"power2.in",
         onComplete:()=>{
@@ -107,13 +102,9 @@ function stopLoading(){
         }
     },0)
     .to(genBtn,{
-        opacity:1,
-        scale:1,
+        color:"#e8e8e8c4",
         duration:0.3,
-        ease:"power2.out",
-        onStart:()=>{
-            genBtn.classList.remove("hidden");
-        }
+        ease:"power2.out"
     },0.15);
 }
 genBtn.addEventListener("click",()=>{
