@@ -431,3 +431,45 @@ transition:0.3s;
 .saved-card:hover{
 background:#ffffff22;
 }
+
+/* mobile block */
+
+.mobile-block{
+display:none;
+position:fixed;
+inset:0;
+z-index:999999;
+background:#000;
+background:linear-gradient(
+180deg,
+rgba(0,0,0,1) 0%,
+rgba(253,29,29,1) 83%,
+rgba(252,176,69,1) 100%
+);
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:5vh;
+}
+
+.mobile-block h1{
+font-family:"Staalitches";
+font-size:8vh;
+margin-bottom:2vh;
+}
+.mobile-block p{
+font-family:"Domine";
+font-size:2.2vh;
+color:#e8e8e8c4;
+line-height:1.8;
+}
+
+@media (max-width:900px){
+  .mobile-block{
+display:flex;
+}
+body > *:not(.mobile-block){
+display:none;
+}gi
+}
