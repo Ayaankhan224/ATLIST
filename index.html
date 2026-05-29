@@ -4,7 +4,7 @@
     <base target="_blank">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ailist</title>
+    <title>Atlist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="src/style.css">
 </head>
@@ -12,7 +12,7 @@
     <header>
         <nav>
             <div class="leftH">
-                <h1>AILIST</h1>
+                <h1>ATLIST</h1>
             </div>
             <div class="midH">
                 <a class="homeBtn">HOME</a>
@@ -21,12 +21,16 @@
                 <a class="savedBtn">SAVED</a>
             </div>
             <div class="rightH">
-                <a href="#" target="_blank"><i class="fa-solid fa-code"></i></i></a>
+                <a href="https://github.com/Ayaankhan224/AIPLAYLIST" target="_blank"><i class="fa-solid fa-code"></i></i></a>
             </div>
         </nav>
     </header>
     <main>
-        <div class="home"></div>
+        <section class="home">
+            <h1>Welcome to Atlist</h1>
+            <p>AI-powered playlist generation for every mood, moment, and mindset.<br>
+            Create personalized soundtracks in seconds.</p>
+        </section>
         <section class="discover">
             <h1>TRENDING PROMPTS</h1>
             <ul>
@@ -66,8 +70,16 @@
             </ul>
         </section>
         <section class="copied">COPIED!</section>
-        <section class="generate"></section>
-        <section class="saved"></section>
+        <section class="generate">
+            <h1>CREATE YOUR OWN PLAYLIST</h1>
+            <input class="genInp" type="text" placeholder="Enter your vibe or mood...">
+            <button class="genBtn">Generate</button>
+            <div class="loader"></div>
+        </section>
+        <section class="saved">
+            <h1>SAVED PLAYLISTS</h1>
+            <p>No saved playlists yet. Start generating to see them here!</p>
+        </section>
     </main>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

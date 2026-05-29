@@ -1,4 +1,5 @@
 //changing panel anim
+
 const home=document.querySelector(".home");
 const discover=document.querySelector(".discover");
 const generate=document.querySelector(".generate");
@@ -7,62 +8,120 @@ const homeBtn=document.querySelector(".homeBtn");
 const discoverBtn=document.querySelector(".discoverBtn");
 const generateBtn=document.querySelector(".generateBtn");
 const savedBtn=document.querySelector(".savedBtn");
-
-const panels = [home, discover, generate, saved];
-
-const switchPanel = (activePanel) => {
-  panels.forEach(panel => {
-    if (panel === activePanel) {
-      panel.style.display = "block";
-      gsap.to(panel, {  
-        opacity: 1,
-        scale: 1,
-        duration: 0.5,
-        ease: "power3.out"
-      });
-    } else {
-      gsap.to(panel, {
-        opacity: 0,
-        scale: 0.95,
-        duration: 0.3,
-        ease: "power2.in",
-        onComplete: () => {
-          panel.style.display = "none";
+const panels=[home,discover,generate,saved];
+home.classList.add("active");
+function switchPanel(activePanel){
+    panels.forEach(panel=>{
+        if(panel===activePanel){
+            panel.classList.add("active");
+            gsap.fromTo(
+                panel,
+                {
+                    opacity:0,
+                    y:20,
+                    scale:0.98
+                },
+                {
+                    opacity:1,
+                    y:0,
+                    scale:1,
+                    duration:0.45,
+                    ease:"cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+                }
+            );
         }
-      });
-    }
-  });
-};
+        else{
+            gsap.to(panel,{
+                opacity:0,
+                y:-20,
+                scale:0.98,
+                duration:0.45,
+                ease:"cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+                onComplete:()=>{
+                    panel.classList.remove("active");
+                }
+            });
+        }
+    });
+}
+homeBtn.addEventListener("click",()=>switchPanel(home));
+discoverBtn.addEventListener("click",()=>switchPanel(discover));
+generateBtn.addEventListener("click",()=>switchPanel(generate));
+savedBtn.addEventListener("click",()=>switchPanel(saved));
 
-homeBtn.addEventListener("click", () => switchPanel(home));
-discoverBtn.addEventListener("click", () => switchPanel(discover));
-generateBtn.addEventListener("click", () => switchPanel(generate));
-savedBtn.addEventListener("click", () => switchPanel(saved));
 
+//copied anim
 
-
-//copied aniamtion 
 const list=document.querySelectorAll("li");
 const copied=document.querySelector(".copied");
 
 list.forEach((li)=>{
-  li.addEventListener("click",()=>{
-    navigator.clipboard.writeText(li.innerText);
-    console.log("COPIED")
-    gsap.to(copied,{
-      opacity:1,
-      duration:0.3,
-    })
-    setTimeout(()=>{
-        gsap.to(copied,{
+    li.addEventListener("click",()=>{
+        navigator.clipboard.writeText(li.innerText);
+        gsap.timeline()
+        .to(copied,{
+            opacity:1,
+            duration:0.25
+        })
+        .to(copied,{
             opacity:0,
-            duration:0.3
+            duration:0.25,
+            delay:1
         });
+    });
+});
+
+//loading anim
+const loader=document.querySelector(".loader");
+const generateInput=document.querySelector(".genInp");
+const genBtn=document.querySelector(".genBtn");
+function startLoading(){
+    gsap.timeline()
+    .to(genBtn,{
+        opacity:0,
+        scale:0.95,
+        duration:0.3,
+        ease:"power2.in",
+        onComplete:()=>{
+            genBtn.classList.add("hidden");
+        }
+    },0)
+    .to(loader,{
+        opacity:1,
+        duration:0.3,
+        ease:"power2.out",
+        onStart:()=>{
+            loader.classList.add("active");
+        }
+    },0.15);
+}
+function stopLoading(){
+    gsap.timeline()
+    .to(loader,{
+        opacity:0,
+        scale:0.95,
+        duration:0.3,
+        ease:"power2.in",
+        onComplete:()=>{
+            loader.classList.remove("active");
+        }
+    },0)
+    .to(genBtn,{
+        opacity:1,
+        scale:1,
+        duration:0.3,
+        ease:"power2.out",
+        onStart:()=>{
+            genBtn.classList.remove("hidden");
+        }
+    },0.15);
+}
+genBtn.addEventListener("click",()=>{
+    startLoading();
+    setTimeout(()=>{
+        stopLoading();
     },2000);
-  });
-})
-
-
+});
 
 
 

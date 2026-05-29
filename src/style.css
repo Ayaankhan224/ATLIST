@@ -1,108 +1,139 @@
 @font-face {
-  font-family: "Staalitches";
-  src: url("./assets/fonts/staalitches.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+  font-family:"Staalitches";
+  src:url("./assets/fonts/staalitches.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Domine";
-  font-weight: normal;
-  src: url("./assets/fonts/domine.ttf") format("truetype");
-  font-style: normal;
+  font-family:"Domine";
+  src:url("./assets/fonts/domine.ttf") format("truetype");
 }
-
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
-
 html,
-body {
-  height: 100vh;
-  width: 100vw;
+body{
+  height:100%;
+  width:100%;
 }
-body {
-  color: #fff;
-  background: #000000;
-  background: linear-gradient(
+body{
+  color:#fff;
+  background:#000;
+  background:linear-gradient(
     180deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(253, 29, 29, 1) 83%,
-    rgba(252, 176, 69, 1) 100%
+    rgba(0,0,0,1) 0%,
+    rgba(253,29,29,1) 83%,
+    rgba(252,176,69,1) 100%
   );
 }
-.discover{
-  display:block;
+
+/*nav*/
+nav{
+  padding:2vh;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
-nav {
-  padding: 2vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.leftH {
-  font-size: 3vh;
-  font-family:"Staalitches", sans-serif;
-  color:rgb(198, 198, 198);
-  text-shadow:0 0 105px rgba(0, 0, 0, 0.25);
+.leftH{
+  font-size:3vh;
+  font-family:"Staalitches",sans-serif;
+  color:rgb(198,198,198);
+  text-shadow:0 0 105px rgba(0,0,0,.25);
   cursor:default;
 }
-.midH {
-  display: flex;
-  gap: 30vh;
-  padding: 2vh;
+.midH{
+  display:flex;
+  gap:30vh;
+  padding:2vh;
   border-radius:25px;
-  background: #ffffff13;
-  border:0.5px solid #ffffff1a;
-  box-shadow: 0 0 105px rgba(0, 0, 0, 0.25);
+  background:#ffffff13;
+  border:.5px solid #ffffff1a;
+  box-shadow:0 0 105px rgba(0,0,0,.25);
   backdrop-filter:blur(50px);
   position:relative;
   right:2vh;
-  font-size: 1.5vh;
+  font-size:1.5vh;
 }
-.rightH {
-  font-size: 3.5vh;
+.rightH{
+  font-size:3.5vh;
   color:whitesmoke;
-  text-shadow:0 0 105px rgba(0, 0, 0, 0.25);
+  text-shadow:0 0 105px rgba(0,0,0,.25);
 }
 a{
-  text-decoration: none;
+  text-decoration:none;
   color:#e8e8e8c4;
-  transition: all 0.3s ease;
+  transition:.3s ease;
   cursor:pointer;
 }
 a:hover{
-  color:#e8e8e8;
-  text-shadow:0 0 105px rgba(0, 0, 0, 0.25);
+  color:#fff;
+  text-shadow:0 0 105px rgba(0,0,0,.25);
 }
 
 
-/*main*/
+/* maIN */
 main{
   margin:4vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  display:grid;
+  place-items:center;
 }
-.discover{
-  height:80vh;
+
+/*panels*/
+.home,
+.discover,
+.generate,
+.saved{
+  grid-area:1/1;
   width:80vw;
-  background-color:pink;
+  min-height:80vh;
   border-radius:25px;
-  background: #ffffff13;
-  border:0.5px solid #ffffff1a;
-  box-shadow: 0 0 105px rgba(0, 0, 0, 0.25);
+  background:#ffffff13;
+  border:.5px solid #ffffff1a;
+  box-shadow:0 0 105px rgba(0,0,0,.25);
   backdrop-filter:blur(50px);
-  padding: 2vh;
+  padding:2vh;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
 }
+
+/* active */
+.active{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+}
+
+/* home */
+.home{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
+}
+.home h1{
+  font-family:"Staalitches",sans-serif;
+  font-size:18vh;
+  margin-bottom:2vh;
+  text-align:center;
+}
+.home p{
+  font-family:"Domine";
+  text-align:center;
+  font-size:3.2vh;
+  color:#e8e8e8c4;
+  line-height:1.8;
+}
+
+
+/*discover*/
 .discover h1{
   font-family:"Domine";
-  font-weight: 400;
-  font-size: 4vh;
-  text-align: center;
+  font-weight:400;
+  font-size:4vh;
+  text-align:center;
 }
+/*list*/
 ul{
   display:flex;
   flex-direction:row;
@@ -119,27 +150,112 @@ li{
   color:#e8e8e8c4;
   font-size:2vh;
   list-style:none;
-  transition: all 0.5s ease;
+  transition:.5s ease;
   cursor:pointer;
 }
 li:hover{
-  color:#e8e8e8;
-  text-shadow:0 0 105px rgba(0, 0, 0, 0.25);
+  color:#fff;
+  text-shadow:0 0 105px rgba(0,0,0,.25);
   scale:1.05;
 }
 .leftList{
-  text-align: left;
+  text-align:left;
 }
 .rightList{
-  text-align: right;
+  text-align:right;
 }
+
+/*copied*/
 .copied{
-  padding:2vh;
-  position:absolute;
-  bottom:10%;
+  position:fixed;
+  bottom:5%;
+  left:50%;
+  transform:translateX(-50%);
+  padding:2vh 4vh;
   border-radius:25px;
-  background: #000000b5;
-  border:0.5px solid #ffffff1a;
-  box-shadow: 0 0 105px rgba(0, 0, 0, 0.25);
+  background:#000000b5;
+  border:.5px solid #ffffff1a;
+  box-shadow:0 0 105px rgba(0,0,0,.25);
   opacity:0;
+  z-index:9999;
+}
+
+/*generate*/
+.generate{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+.generate h1{
+  font-family:"Domine";
+  font-weight:400;
+  font-size:4vh;
+  text-align:center;
+  margin-bottom:4vh;
+}
+.genInp{
+  padding:1vh;
+  width:50%;
+  border-radius:25px;
+  border:.5px solid #ffffff1a;
+  background:#ffffff13;
+  box-shadow:0 0 105px rgba(0,0,0,.25);
+  backdrop-filter:blur(50px);
+  color:#e8e8e8c4;
+  font-size:1.5vh;
+  margin-bottom:2vh;
+}
+.genBtn{
+  padding:1vh 2vh;
+  border-radius:25px;
+  border:.5px solid #ffffff1a;
+  background:#ffffff13;
+  box-shadow:0 0 105px rgba(0,0,0,.25);
+  backdrop-filter:blur(50px);
+  color:#e8e8e8c4;
+  font-size:1.5vh;
+  cursor:pointer;
+  transition:.3s ease;
+}
+.genBtn:hover{
+  color:#fff;
+  text-shadow:0 0 105px rgba(0,0,0,.25);
+  scale:1.05;
+}
+.genBtn.hidden{
+  pointer-events:none;
+}
+.loader{
+  width: 50px;
+  height: 50px;
+  margin-top:2vh;
+  opacity:0;
+  visibility:hidden;
+  background: conic-gradient(from 0deg, #e8a2ff 0deg, #b78aff 90deg, transparent 270deg);
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
+.loader.active{
+  opacity:1;
+  visibility:visible;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/*saved*/
+.saved h1{
+  font-family:"Domine";
+  font-weight:400;
+  font-size:4vh;
+  text-align:center;
+  margin-bottom:4vh;
+}
+.saved p{
+  font-family:"Domine";
+  text-align:center;
+  font-size:3vh;
+  color:#e8e8e8c4;
 }
