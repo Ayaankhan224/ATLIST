@@ -1,12 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <base target="_blank">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI PLAYLIST GENERATOR</title>
+    <title>ailist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="src/style.css">
 </head>
 <body>
+    <header>
+        <nav>
+            <div class="leftH">
+                <h1>AILIST</h1>
+            </div>
+            <div class="midH">
+                <a class="homeBtn">HOME</a>
+                <a class="discoverBtn">DISCOVER</a>
+                <a class="generateBtn">GENERATE</a>
+                <a class="savedBtn">SAVED</a>
+            </div>
+            <div class="rightH">
+                <a href="#" target="_blank"><i class="fa-solid fa-code"></i></i></a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="home"></div>
+        <section class="discover">
+            <h1>TRENDING PROMPTS</h1>
+            <ul>
+                <div class="leftList"><li>late night coding in rain</li>
+                    <li>midnight city drive</li>
+                    <li>cozy rainy study session</li>
+                    <li>deep focus mode</li>
+                    <li>walking alone in tokyo at night</li>
+                    <li>heartbreak but healing</li>
+                    <li>dark synthwave workspace</li>
+                    <li>3am existential thoughts</li>
+                    <li>main character energy</li>
+                    <li>sunset nostalgia</li>
+                    <li>coffee + code + lofi</li>
+                    <li>gym villain arc</li>
+                    <li>silent overthinking</li>
+                    <li>neon cyberpunk loneliness</li>
+                    <li>warm room, cold weather</li>
+                </div>
+                <div class="rightList">
+                    <li>rain hitting the window at 2am</li>
+                    <li>escaping reality through headphones</li>
+                    <li>studying like the world is ending</li>
+                    <li>slow dancing with my thoughts</li>
+                    <li>floating through neon memories</li>
+                    <li>burnout but still pushing</li>
+                    <li>empty streets, full mind</li>
+                    <li>pretending everything is okay</li>
+                    <li>staring at the ceiling at 3am</li>
+                    <li>winter night train ambience</li>
+                    <li>building my empire in silence</li>
+                    <li>feeling nostalgic for something that never happened</li>
+                    <li>villain origin story soundtrack</li>
+                    <li>lost in a city that never sleeps</li>
+                    <li>healing in low battery mode</li>
+                </div>
+            </ul>
+        </section>
+        <section class="copied">COPIED!</section>
+        <section class="generate"></section>
+        <section class="saved"></section>
+    </main>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="module" src="src/main.js"></script>
 </body>
 </html>
